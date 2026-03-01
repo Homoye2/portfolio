@@ -178,22 +178,22 @@ function Portfolio() {
        <div className='container mx-auto flex flex-col' style={{ paddingLeft: '2rem', paddingRight: '2rem' }}>
         <section id="accueil" className="w-full mx-auto flex items-start justify-center" >
       
-         <div className="w-full text-center animate-on-scroll flex md:flex-row flex-col opacity-0 gap-4">
+         <div className="w-full md:h-20 border text-center animate-on-scroll flex md:flex-row flex-col  gap-4 ">
           
-              <div className="w-42 h-42 mx-auto rounded-full flex items-center justify-center text-6xl animate-float shadow-primary rounded-full -translate-y-1/2">
+              <div className="w-42 h-42  mx-auto rounded-full flex items-center justify-center text-6xl animate-float shadow-primary rounded-full -translate-y-1/2">
               <img src={photo} alt="Mamadou Kouma" className='w-full h-full object-cover rounded-full'/>
               </div>
-              <div className='flex flex-col items-center  pt-10 '>
-                <div className='flex flex-wrap gap-4 mt-10'>
-                    <h2 className="text-3xl md:text-3xl font-bold mb-6 text-gradient">
+              
+                <div className='flex md:flex-col flex-row gap-2 mt-10'>
+                    <h2 className="text-xl md:text-3xl font-bold mb-6 text-gradient">
                       MAMADOU KOUMA
                     </h2>
                     <div className='h-8 w-px border-2 border-white relative overflow-hidden'/>
-                    <p className="text-2xl md:text-2xl mb-4" style={{ color: '#c4b5fd' }}>
+                    <p className="text-lg md:text-2xl mb-4" style={{ color: '#c4b5fd' }}>
                       Développeur Full-Stack 
                     </p>
               </div>
-           </div>
+           
           
       
        </div>
@@ -230,8 +230,9 @@ function Portfolio() {
                     Spécialisé dans React, Django, Laravel et les technologies IA.
                   </p>
                   <a 
-                    href="/CV_Mamadou_Kouma.pdf" 
-                    download
+                    href="/portfolio/CV_Mamadou_Kouma.pdf" 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className='inline-block px-6 py-2 rounded-full text-white font-semibold hover:scale-105 transition-transform duration-300'
                     style={{ background: 'linear-gradient(to right, #8b5cf6, #d946ef)',padding:"1rem" }}
                   >
@@ -247,10 +248,7 @@ function Portfolio() {
                 className='flex items-center justify-between w-full text-left text-lg font-bold text-white  duration-300'
               >
                 <span>🎓Education</span>
-              
               </div>
-              
-              
                 <div className='mt-4 space-y-4'>
                   {education.map((edu, idx) => (
                     <div 
