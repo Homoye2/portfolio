@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import './Portfolio.css'
+import photo from "../../public/photo.png"
 
 function Portfolio() {
   useEffect(() => {
@@ -153,7 +154,7 @@ function Portfolio() {
          <div className="w-full text-center animate-on-scroll flex md:flex-row flex-col opacity-0 gap-4">
           
               <div className="w-42 h-42 mx-auto rounded-full flex items-center justify-center text-6xl animate-float shadow-primary rounded-full -translate-y-1/2">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Mamadou Kouma" className='w-full h-full object-cover rounded-full'/>
+            <img src={photo} alt="Mamadou Kouma" className='w-full h-full object-cover rounded-full'/>
               </div>
               <div className='flex flex-col items-center  pt-10 '>
                 <div className='flex flex-wrap gap-4 mt-10'>
