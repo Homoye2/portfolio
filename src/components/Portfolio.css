@@ -1,0 +1,29 @@
+/* Animation pour les éléments au scroll */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.container {
+  max-width: 1500px;
+  margin: 0 auto; /* Centre le conteneur */
+  padding: 10px 20px; /* Optionnel : pour ajouter des espacements internes */
+}
+/* Animation flottante pour l'avatar */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
