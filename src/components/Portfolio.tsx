@@ -184,7 +184,7 @@ function Portfolio() {
               <img src={photo} alt="Mamadou Kouma" className='w-full h-full object-cover rounded-full'/>
               </div>
               
-                <div className='flex flex-col flex-row gap-2 mt-10'>
+                <div className='flex flex-col flex-row items-center justify-center gap-2 mt-10'>
                     <h2 className="text-[18px] md:text-3xl font-bold mb-6 text-gradient">
                       MAMADOU KOUMA
                     </h2>
