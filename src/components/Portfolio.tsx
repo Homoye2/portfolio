@@ -4,6 +4,8 @@ import photo from "../../public/photo.png"
 
 function Portfolio() {
   const [isResumeOpen, setIsResumeOpen] = useState(false)
+  const [isEducationOpen, setIsEducationOpen] = useState(false)
+  const [selectedProject, setSelectedProject] = useState<number | null>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -126,45 +128,134 @@ function Portfolio() {
     {
       title: 'E-Sora',
       description: 'Application web complète de gestion de tous les comptes',
-      tech: ['Django', 'React', 'Vite.js' ,'TailwindCSS'],
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop'
+      tech: ['Django', 'React', 'Vite.js', 'TailwindCSS'],
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+      details: {
+        fullDescription: 'Plateforme complète de gestion multi-comptes permettant la centralisation et l\'administration de différents types de comptes utilisateurs avec un système de permissions avancé.',
+        features: [
+          'Gestion centralisée de tous les comptes',
+          'Système de permissions et rôles',
+          'Dashboard analytique en temps réel',
+          'Interface responsive et moderne',
+          'API REST complète'
+        ],
+        duration: '6 mois',
+        role: 'Développeur Full-Stack Lead'
+      }
     },
-     {
-      title: 'E-Sora-hopital',
+    {
+      title: 'E-Sora Hôpital',
       description: 'Application web complète de gestion d\'hôpitaux',
       tech: ['Django', 'React', 'Vite.js', 'TailwindCSS'],
-      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop'
+      image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&h=600&fit=crop',
+      details: {
+        fullDescription: 'Système de gestion hospitalière complet incluant la gestion des patients, des rendez-vous, des consultations médicales et des ordonnances numériques.',
+        features: [
+          'Gestion des dossiers patients',
+          'Système de prise de rendez-vous en ligne',
+          'Consultations médicales numériques',
+          'Ordonnances électroniques',
+          'Planning familial',
+          'Interface multi-tenant'
+        ],
+        duration: '8 mois',
+        role: 'Développeur Full-Stack & Chef de Projet'
+      }
     },
-     {
-      title: 'E-Sora-mobile',
-      description: 'Application moblie complète pour les patients ',
-      tech: ['Django', 'React Native','Expo GO', 'TailwindCSS'],
-      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop'
-    },
-    
     {
-      title: 'e-sora-pharmacie',
+      title: 'E-Sora Mobile',
+      description: 'Application mobile complète pour les patients',
+      tech: ['Django', 'React Native', 'Expo', 'TailwindCSS'],
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop',
+      details: {
+        fullDescription: 'Application mobile dédiée aux patients permettant la gestion de leur santé, la prise de rendez-vous et le suivi médical à distance.',
+        features: [
+          'Prise de rendez-vous en ligne',
+          'Consultation des résultats médicaux',
+          'Gestion du planning familial',
+          'Notifications push pour rappels',
+          'Historique médical complet',
+          'Chat avec les médecins'
+        ],
+        duration: '5 mois',
+        role: 'Développeur Mobile Lead'
+      }
+    },
+    {
+      title: 'E-Sora Pharmacie',
       description: 'Système complet de gestion pharmaceutique',
       tech: ['Django', 'React', 'PostgreSQL'],
-      image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=800&h=600&fit=crop'
+      image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=800&h=600&fit=crop',
+      details: {
+        fullDescription: 'Plateforme de gestion pharmaceutique avec gestion des stocks, commandes en ligne et système de livraison aux patients.',
+        features: [
+          'Gestion des stocks et inventaires',
+          'Commandes en ligne',
+          'Système de livraison',
+          'Facturation automatique',
+          'Reporting et statistiques',
+          'Gestion des fournisseurs'
+        ],
+        duration: '4 mois',
+        role: 'Développeur Full-Stack'
+      }
     },
     {
       title: 'Gestion de Ferme Avicole',
       description: 'Analyse intelligente avec Machine Learning pour prédire les maladies',
       tech: ['Python', 'PyTorch', 'TensorFlow'],
-      image: 'https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=800&h=600&fit=crop'
+      image: 'https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=800&h=600&fit=crop',
+      details: {
+        fullDescription: 'Système d\'analyse intelligent utilisant le Machine Learning pour analyser les déjections de poulets et prédire les maladies aviaires de manière précoce.',
+        features: [
+          'Analyse par IA des déjections',
+          'Détection précoce des pathologies',
+          'Système d\'alerte automatique',
+          'Historique et statistiques',
+          'Recommandations de traitement',
+          'Interface de monitoring en temps réel'
+        ],
+        duration: '6 mois',
+        role: 'Data Scientist & Développeur IA'
+      }
     },
     {
       title: 'Détection de Conformité Motocycliste',
       description: 'Application de surveillance routière avec IA',
       tech: ['YOLO', 'PyTorch', 'TensorFlow'],
-      image: 'https://images.unsplash.com/photo-1558981852-426c6c22a060?w=800&h=600&fit=crop'
+      image: 'https://images.unsplash.com/photo-1558981852-426c6c22a060?w=800&h=600&fit=crop',
+      details: {
+        fullDescription: 'Application de surveillance routière utilisant YOLO pour détecter automatiquement les motocyclistes sans casque et améliorer la sécurité routière.',
+        features: [
+          'Détection automatique par IA',
+          'Reconnaissance des plaques d\'immatriculation',
+          'Système d\'alerte en temps réel',
+          'Génération de rapports',
+          'Dashboard de statistiques',
+          'Intégration avec systèmes de surveillance'
+        ],
+        duration: '5 mois',
+        role: 'Développeur IA & Computer Vision'
+      }
     },
     {
       title: 'Bibliothèque Numérique',
       description: 'Plateforme de gestion documentaire',
       tech: ['Laravel', 'React', 'TailwindCSS'],
-      image: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&h=600&fit=crop'
+      image: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&h=600&fit=crop',
+      details: {
+        fullDescription: 'Plateforme complète de gestion de bibliothèque numérique avec catalogue en ligne, gestion des emprunts et système d\'abonnement.',
+        features: [
+          'Catalogue numérique complet',
+          'Gestion des emprunts',
+          'Système d\'abonnement',
+          'Recherche avancée',
+          'Réservations en ligne',
+          'Notifications automatiques'
+        ],
+        duration: '4 mois',
+        role: 'Développeur Full-Stack'
+      }
     }
   ]
 
@@ -384,7 +475,8 @@ function Portfolio() {
             {projects.map((project, idx) => (
               <div
                 key={idx}
-                className="animate-on-scroll opacity-0 bg-dark-card backdrop-blur-sm rounded-2xl overflow-hidden border border-primary-custom hover:border-primary-custom transition-all duration-300 hover:scale-105 group hover:shadow-primary-lg"
+                onClick={() => setSelectedProject(idx)}
+                className="animate-on-scroll opacity-0 bg-dark-card backdrop-blur-sm rounded-2xl overflow-hidden border border-primary-custom hover:border-primary-custom transition-all duration-300 hover:scale-105 group hover:shadow-primary-lg cursor-pointer"
                 style={{ animationDelay: `${idx * 100}ms` }}
               >
                 <div className="relative h-48 overflow-hidden">
@@ -393,6 +485,11 @@ function Portfolio() {
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
+                  <div className="absolute inset-0 bg-black/50 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                    <span className="text-white text-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Voir les détails →
+                    </span>
+                  </div>
                 </div>
                 <div className="p-6" style={{padding:"1rem"}}>
                   <h3 className="text-xl font-bold text-primary-custom mb-2">{project.title}</h3>
@@ -448,6 +545,107 @@ function Portfolio() {
         </div>
       </section>
        </div>
+
+      {/* Modal de détails du projet */}
+      {selectedProject !== null && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-opacity-75 backdrop-blur-sm"
+          onClick={() => setSelectedProject(null)}
+        >
+          <div 
+            className="bg-dark-card rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-y-auto  border-2 border-primary-custom shadow-2xl shadow-primary-500/50"
+            onClick={(e) => e.stopPropagation()}
+            style={{ animation: 'fadeIn 0.3s ease-out' }}
+          >
+            {/* Header du modal */}
+            <div className="relative h-64 md:h-80 overflow-hidden rounded-t-3xl">
+              <img 
+                src={projects[selectedProject].image} 
+                alt={projects[selectedProject].title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent"></div>
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-4 right-4 w-10 h-10 bg-dark-card rounded-full flex items-center justify-center text-white hover:bg-primary-500 transition-colors duration-300"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              <div className="absolute bottom-0 bg-black/30  left-0 right-0 p-6 md:p-8" style={{padding:'0.5rem'}}>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+                  {projects[selectedProject].title}
+                </h2>
+                <p className="text-gray-300 text-lg">
+                  {projects[selectedProject].description}
+                </p>
+              </div>
+            </div>
+
+            {/* Contenu du modal */}
+            <div className="p-6 md:p-8"  style={{padding:'0.7rem'}}>
+              {/* Description complète */}
+              <div className="mb-6" >
+                <h3 className="text-2xl font-bold text-primary-custom mb-3">📋 Description</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  {projects[selectedProject].details.fullDescription}
+                </p>
+              </div>
+
+              {/* Fonctionnalités */}
+              <div className="mb-6"  style={{padding:'0.5rem'}}>
+                <h3 className="text-2xl font-bold text-primary-custom mb-3">✨ Fonctionnalités</h3>
+                <ul className="grid md:grid-cols-2 gap-3">
+                  {projects[selectedProject].details.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-gray-300">
+                      <span className="text-primary-400 mt-1">✓</span>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Technologies */}
+              <div className="mb-6"  style={{padding:'0.5rem'}}>
+                <h3 className="text-2xl font-bold text-primary-custom mb-3"  style={{padding:'0.5rem'}}>🛠️ Technologies</h3>
+                <div className="flex flex-wrap gap-3">
+                  {projects[selectedProject].tech.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-4 py-2 bg-primary-badge rounded-full text-sm font-semibold"
+                      style={{ color: '#c4b5fd' ,padding:"0.5rem"}}
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Informations supplémentaires */}
+              <div className="grid md:grid-cols-2 gap-4 mb-6"  style={{padding:'0.5rem'}}>
+                <div className="bg-dark rounded-xl p-4 border border-primary-custom/30"  style={{padding:'0.5rem'}}>
+                  <h4 className="text-primary-custom font-bold mb-2">⏱️ Durée</h4>
+                  <p className="text-gray-300">{projects[selectedProject].details.duration}</p>
+                </div>
+                <div className="bg-dark rounded-xl p-4 border border-primary-custom/30"  style={{padding:'0.5rem'}}>
+                  <h4 className="text-primary-custom font-bold mb-2">👤 Rôle</h4>
+                  <p className="text-gray-300">{projects[selectedProject].details.role}</p>
+                </div>
+              </div>
+
+              {/* Bouton de fermeture */}
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="w-full py-3 rounded-full text-white font-semibold hover:scale-105 transition-transform duration-300"
+                style={{ background: 'linear-gradient(to right, #8b5cf6, #d946ef)' ,padding:"1rem"}}
+              >
+                Fermer
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="py-8 px-4 border-t border-primary-custom">
