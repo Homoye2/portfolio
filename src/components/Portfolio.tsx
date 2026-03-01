@@ -1,8 +1,10 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import './Portfolio.css'
 import photo from "../../public/photo.png"
 
 function Portfolio() {
+  const [isResumeOpen, setIsResumeOpen] = useState(false)
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -95,6 +97,31 @@ function Portfolio() {
       ]
     }
   ]
+
+  const education = [
+    {
+      title: 'Master en Génie Logiciel et Administration Réseau',
+      school: 'École Supérieure de Technologie et de Management (ESTM)',
+      location: 'Dakar, Sénégal',
+      period: '2022 - 2023',
+      description: 'Spécialisation en développement logiciel et gestion de réseaux'
+    },
+    {
+      title: 'Licence en Sciences Mathématiques et Informatique',
+      school: 'Université Cadi Ayyad de Marrakech (Semlalia)',
+      location: 'Marrakech, Maroc',
+      period: '2018 - 2021',
+      description: 'Formation en mathématiques appliquées et informatique'
+    },
+    {
+      title: 'Baccalauréat Scientifique',
+      school: 'Lycée',
+      location: 'Mali',
+      period: '2018',
+      description: 'Baccalauréat série Sciences'
+    }
+  ]
+
   const projects = [
     {
       title: 'E-Sora',
@@ -154,7 +181,7 @@ function Portfolio() {
          <div className="w-full text-center animate-on-scroll flex md:flex-row flex-col opacity-0 gap-4">
           
               <div className="w-42 h-42 mx-auto rounded-full flex items-center justify-center text-6xl animate-float shadow-primary rounded-full -translate-y-1/2">
-            <img src={photo} alt="Mamadou Kouma" className='w-full h-full object-cover rounded-full'/>
+              <img src={photo} alt="Mamadou Kouma" className='w-full h-full object-cover rounded-full'/>
               </div>
               <div className='flex flex-col items-center  pt-10 '>
                 <div className='flex flex-wrap gap-4 mt-10'>
@@ -172,11 +199,78 @@ function Portfolio() {
        </div>
         </section>
      
-       <section className="w-full mx-auto" style={{ paddingTop: '2rem', paddingBottom: '1rem' }}>
+       <section className="w-full mx-auto" style={{ paddingTop: '2rem',  }}>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-4 animate-on-scroll'>
 
-           <div className='col-span-2 w-full h-full bg-gray-200/50 opacity-50 border rounded-[10px]'>
+           <div className='col-span-2 w-full h-full bg-black/40 opacity-50 rounded-[10px]' style={{ padding: '2rem' }}>
+            <h2 className='text-xl font-bold text-white' style={{ paddingBottom: '1rem'}}>Bienvenue dans mon Portfolio</h2>
+            
+            {/* Section Resume avec accordéon */}
+            <div className='mb-6'>
+              <div 
+                onClick={() => setIsResumeOpen(!isResumeOpen)}
+                className='flex items-center justify-between w-full text-left text-lg font-bold text-white hover:text-primary-custom transition-colors duration-300 cursor-pointer'
+                style={{ paddingBottom: '1rem'}}
+              >
+                <span>Resume / CV</span>
+                <svg 
+                  className={`w-6 h-6 transition-transform duration-300 ${isResumeOpen ? 'rotate-180' : ''}`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+              
+              {isResumeOpen && (
+                <div className='mt-4 p-4 bg-dark-card rounded-lg border border-primary-custom' style={{ padding: '1rem'}}> 
+                  <p className='text-gray-300 mb-4' style={{ paddingBottom: '1rem'}}>
+                    Développeur Full-Stack passionné avec 3-5 ans d'expérience en développement web et mobile. 
+                    Spécialisé dans React, Django, Laravel et les technologies IA.
+                  </p>
+                  <a 
+                    href="/CV_Mamadou_Kouma.pdf" 
+                    download
+                    className='inline-block px-6 py-2 rounded-full text-white font-semibold hover:scale-105 transition-transform duration-300'
+                    style={{ background: 'linear-gradient(to right, #8b5cf6, #d946ef)',padding:"1rem" }}
+                  >
+                    📄 Télécharger mon CV
+                  </a>
+                </div>
+              )}
+            </div>
 
+            {/* Section Education avec accordéon */}
+            <div className='mb-6'>
+              <div 
+                className='flex items-center justify-between w-full text-left text-lg font-bold text-white  duration-300'
+              >
+                <span>🎓Education</span>
+              
+              </div>
+              
+              
+                <div className='mt-4 space-y-4'>
+                  {education.map((edu, idx) => (
+                    <div 
+                      key={idx}
+                      className='p-4 rounded-lg  transition-all duration-300'
+                      style={{ paddingBottom: '1rem'}}
+                    >
+                      <li className='text-lg font-bold text-primary-custom mb-2'>
+                       <p> {edu.title}</p>
+                            <p className='text-gray-300 font-semibold'>{edu.school}</p>
+                            <p className='text-gray-400 text-sm'>{edu.location}</p>
+                            <p className='text-sm mt-1' style={{ color: '#c4b5fd' }}>{edu.period}</p>
+                            <p className='text-gray-400 text-sm mt-2'>{edu.description}</p>
+                       </li>
+                    </div>
+                  ))}
+                </div>
+             
+            </div>
+            
            </div>
            <div className='col-span-1 w-full h-full bg-green-200/50 flex flex-col rounded-[10px] p-6'  style={{ padding: '2rem'}}>
               <h2 className="text-2xl font-bold text-center mb-16 text-white animate-on-scroll opacity-0">
