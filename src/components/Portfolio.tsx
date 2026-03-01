@@ -178,18 +178,18 @@ function Portfolio() {
        <div className='container mx-auto flex flex-col' style={{ paddingLeft: '2rem', paddingRight: '2rem' }}>
         <section id="accueil" className="w-full mx-auto flex items-start justify-center" >
       
-         <div className="w-full md:h-20 border text-center animate-on-scroll flex md:flex-row flex-col  gap-4 ">
+         <div className="w-full md:h-20  text-center animate-on-scroll flex md:flex-row flex-col  gap-4 ">
           
               <div className="w-42 h-42  mx-auto rounded-full flex items-center justify-center text-6xl animate-float shadow-primary rounded-full -translate-y-1/2">
               <img src={photo} alt="Mamadou Kouma" className='w-full h-full object-cover rounded-full'/>
               </div>
               
-                <div className='flex md:flex-col flex-row gap-2 mt-10'>
-                    <h2 className="text-xl md:text-3xl font-bold mb-6 text-gradient">
+                <div className='flex flex-col flex-row gap-2 mt-10'>
+                    <h2 className="text-[18px] md:text-3xl font-bold mb-6 text-gradient">
                       MAMADOU KOUMA
                     </h2>
-                    <div className='h-8 w-px border-2 border-white relative overflow-hidden'/>
-                    <p className="text-lg md:text-2xl mb-4" style={{ color: '#c4b5fd' }}>
+                    <div className='h-6 w-px border-1 border-white relative overflow-hidden'/>
+                    <p className="text-[14px] md:text-2xl mb-4" style={{ color: '#c4b5fd' }}>
                       Développeur Full-Stack 
                     </p>
               </div>
