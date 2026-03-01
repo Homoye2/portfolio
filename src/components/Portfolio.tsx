@@ -1,8 +1,6 @@
 import { useEffect } from 'react'
 import './Portfolio.css'
-import Code from "../../public/code.jpeg";
-import Photo from "../../public/photo.png";
-import ESora from "../../public/e_sora.png";
+
 function Portfolio() {
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -101,7 +99,7 @@ function Portfolio() {
       title: 'E-Sora',
       description: 'Application web complète de gestion de tous les comptes',
       tech: ['Django', 'React', 'Vite.js' ,'TailwindCSS'],
-      image: ESora
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop'
     },
      {
       title: 'E-Sora-hopital',
@@ -146,7 +144,7 @@ function Portfolio() {
     <div className="bg-dark-custom">
      
         <div className="h-40 relative overflow-hidden">
-          <img src={Code} alt="code" className='w-full h-full object-fit'/>
+          <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=400&fit=crop" alt="code background" className='w-full h-full object-cover'/>
          </div>
       
        <div className='container mx-auto flex flex-col' style={{ paddingLeft: '2rem', paddingRight: '2rem' }}>
@@ -155,7 +153,7 @@ function Portfolio() {
          <div className="w-full text-center animate-on-scroll flex md:flex-row flex-col opacity-0 gap-4">
           
               <div className="w-42 h-42 mx-auto rounded-full flex items-center justify-center text-6xl animate-float shadow-primary rounded-full -translate-y-1/2">
-            <img src={Photo} alt="code" className='w-full h-full object-fit rounded-full'/>
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Mamadou Kouma" className='w-full h-full object-cover rounded-full'/>
               </div>
               <div className='flex flex-col items-center  pt-10 '>
                 <div className='flex flex-wrap gap-4 mt-10'>
