@@ -4,7 +4,7 @@ import photo from "../../public/photo.png"
 
 function Portfolio() {
   const [isResumeOpen, setIsResumeOpen] = useState(false)
-  const [isEducationOpen, setIsEducationOpen] = useState(false)
+
   const [selectedProject, setSelectedProject] = useState<number | null>(null)
 
   useEffect(() => {
@@ -521,7 +521,7 @@ function Portfolio() {
           <p className="text-gray-400 mb-12 text-lg"  style={{marginBottom:'1rem'}}>
             Intéressé par une collaboration ? N'hésitez pas à me contacter !
           </p>
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
             <a
               href="mailto:mamadoukouma691@gmail.com"
               className="bg-dark-card backdrop-blur-sm rounded-2xl p-8 border border-primary-custom hover:border-primary-custom transition-all duration-300 hover:scale-105 hover:shadow-primary-lg"
@@ -539,6 +539,15 @@ function Portfolio() {
               <div className="text-4xl mb-4">📱</div>
               <h3 className="text-xl font-bold text-primary-custom mb-2">Téléphone</h3>
               <p className="text-gray-400">+221 78 874 99 80</p>
+            </a>
+             <a
+              href="tel:+221788749980"
+              className="bg-dark-card backdrop-blur-sm rounded-2xl p-8 border border-primary-custom hover:border-primary-custom transition-all duration-300 hover:scale-105 hover:shadow-primary-lg"
+              style={{padding:"1rem"}}
+            >
+              <div className="text-4xl mb-4">📱</div>
+              <h3 className="text-xl font-bold text-primary-custom mb-2">Téléphone</h3>
+              <p className="text-gray-400">+223 75 01 79 85</p>
             </a>
           </div>
 
